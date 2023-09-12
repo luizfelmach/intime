@@ -11,7 +11,7 @@ export function Header() {
             <div className="flex justify-between">
 
                 <div className="self-center">
-                    <Clock4 className="animate-bounce" />
+                    <Clock4 />
                 </div>
 
 
