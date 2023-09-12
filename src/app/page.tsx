@@ -1,13 +1,14 @@
 import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
-import { Button } from "@/components/ui/button";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
     <div className="main">
 
+      <Header />
 
-      <div className="h-[600px]">
+      <div className="h-screen bg-purple-950">
 
       </div>
 

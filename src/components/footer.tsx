@@ -3,27 +3,30 @@ import { Button } from "./ui/button";
 
 export function Footer() {
     return (
-        <div className="h-40 bg-foreground/5 flex justify-evenly p-4 items-center gap-4">
+        <div className="h-40 bg-foreground/5">
+            <div className="max-w-screen-xl relative mx-auto px-4">
+                <div className="space-y-6">
 
-            <p className="text-foreground font-bold">
-                &copy; In Time Relógios. {new Date().getFullYear()}.
-            </p>
+                    <div className="flex gap-2 pt-6">
+                        <Button variant="outline" size="icon">
+                            <Instagram />
+                        </Button>
+                        <Button variant="outline" size="icon">
+                            <Facebook />
+                        </Button>
+                        <Button variant="outline" size="icon">
+                            <Mail />
+                        </Button>
+                        <Button variant="outline" size="icon">
+                            <SendHorizontal />
+                        </Button>
+                    </div>
 
-            <div className="flex gap-2">
-                <Button variant="outline" size="icon">
-                    <Instagram />
-                </Button>
-                <Button variant="outline" size="icon">
-                    <Facebook />
-                </Button>
-                <Button variant="outline" size="icon">
-                    <Mail />
-                </Button>
-                <Button variant="outline" size="icon">
-                    <SendHorizontal />
-                </Button>
+                    <p className="text-foreground font-bold">
+                        &copy; In Time Relógios. {new Date().getFullYear()}.
+                    </p>
+                </div>
             </div>
-
         </div>
     )
 }
