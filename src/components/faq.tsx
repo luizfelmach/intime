@@ -11,7 +11,7 @@ export function Faq() {
                     Perguntas frequentes
                 </h1>
 
-                <div className="">
+                <div className="mb-8">
                     <Accordion type="single" collapsible>
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="text-foreground/70">Os relógios já estão no Brasil a pronta entrega?</AccordionTrigger>
