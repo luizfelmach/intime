@@ -43,7 +43,7 @@ export default function Home() {
 
           <Header />
 
-          <div className="h-screen bg-foreground/5 flex justify-evenly px-4 py-20">
+          <div className="h-screen bg-foreground/5 flex justify-evenly px-4 py-20 phone:grid">
             <div className="self-center">
               <motion.h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
                 initial="initial"
@@ -71,6 +71,7 @@ export default function Home() {
                 exit="exit"
                 variants={variants}
                 transition={{ type: "spring", damping: 30, stiffness: 100 }}
+
               >
                 <Button className="my-8 font-bold" size={"lg"}>Descubra</Button>
               </motion.div>
@@ -83,7 +84,7 @@ export default function Home() {
               transition={{ type: "spring", damping: 80, stiffness: 100 }}
               className="self-center"
             >
-              <Image className="drop-shadow-xl" src={"/watch.png"} alt="Relógio" width={500} height={500} priority={true} />
+              <Image className="drop-shadow-xl" src={`/watch-1.png`} alt="Relógio" width={500} height={500} priority={true} />
             </motion.div>
           </div>
 
