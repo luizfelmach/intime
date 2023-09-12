@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 export function Faq() {
     return (
 
-        <div className="max-w-screen-xl relative mx-auto px-4">
+        <div className="max-w-screen-xl relative mx-auto px-4 py-8">
 
             <div className="">
 
