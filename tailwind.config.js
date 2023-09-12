@@ -17,6 +17,7 @@ module.exports = {
     },
     screens: {
       'phone': { 'max': '500px' },
+      'tall': { 'raw': '(max-height: 900px)' },
     },
     extend: {
       colors: {
