@@ -43,7 +43,7 @@ export default function Home() {
 
           <Header />
 
-          <div className="h-screen bg-foreground/5 flex justify-center px-4 py-20">
+          <div className="h-screen bg-foreground/5 flex justify-evenly px-4 py-20">
             <div className="self-center">
               <motion.h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
                 initial="initial"
@@ -62,7 +62,7 @@ export default function Home() {
                 variants={variants}
                 transition={{ type: "spring", damping: 30, stiffness: 100 }}
               >
-                Descubra a elegância: mais de 800 modelos de relógios de luxo masculinos e femininos, em uma paleta de cores exclusiva.
+                Descubra a elegância com mais de 800 modelos de relógios de luxo masculinos e femininos, disponíveis em uma paleta de cores exclusiva.
               </motion.p>
 
               <motion.div
@@ -72,7 +72,7 @@ export default function Home() {
                 variants={variants}
                 transition={{ type: "spring", damping: 30, stiffness: 100 }}
               >
-                <Button className="my-8">Descubra</Button>
+                <Button className="my-8 font-bold" size={"lg"}>Descubra</Button>
               </motion.div>
             </div>
             <motion.div
