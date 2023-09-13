@@ -1,11 +1,12 @@
 "use client"
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/loader";
 
 
 export default function Home() {
@@ -17,12 +18,6 @@ export default function Home() {
     exit: { y: -100, opacity: 0 },
   };
 
-  const transition = {
-    type: 'spring',
-    damping: 15,
-    stiffness: 300,
-  };
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -32,16 +27,10 @@ export default function Home() {
   return (
     <>
       {loading ? <>
-        <div className="flex h-screen justify-center bg-foreground/5">
-          <div className="self-center">
-            <Image src={"/clock.gif"} alt="In Time Relógios" width={150} height={150} priority={true} />
-          </div>
-        </div>
+        <Loader />
       </> :
 
         <div className="main">
-
-          <Header />
 
           <div className="h-screen bg-foreground/5 flex justify-evenly px-4 py-20 phone:grid tall:h-[calc(100vh+150px)]">
             <div className="self-center">
@@ -92,7 +81,6 @@ export default function Home() {
           </div>
 
           <Faq />
-          <Footer />
         </div>}
     </>
   )
