@@ -5,6 +5,7 @@ import { Faq } from "@/components/faq";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/loader";
+import { Watch } from "@/components/watch";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -75,18 +76,19 @@ export default function Home() {
               transition={{ type: "spring", damping: 80, stiffness: 100 }}
               className="self-center"
             >
-              <Image
-                className="drop-shadow-xl"
-                src={`/watch-1.png`}
-                alt="Relógio"
-                width={500}
-                height={500}
-                priority={true}
-              />
+              <Watch />
             </motion.div>
           </div>
 
-          <div className="h-screen bg-foreground/70 flex justify-center px-4 py-20"></div>
+          <div className="h-screen bg-foreground/70 flex justify-center px-4 py-20">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+              <div className="">
+                <h1 className="scroll-m-20 text-background  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  As principais marcas do mercado.
+                </h1>
+              </div>
+            </div>
+          </div>
 
           <Faq />
         </div>
