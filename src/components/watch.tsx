@@ -32,8 +32,8 @@ export function Watch() {
           key={currentIndex}
           src={logos[currentIndex]}
           alt={`Relógio ${currentIndex + 1}`}
-          width={400}
-          height={400}
+          width={300}
+          height={300}
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
