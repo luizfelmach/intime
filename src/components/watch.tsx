@@ -26,7 +26,7 @@ export function Watch() {
   }, []);
 
   return (
-    <>
+    <div className="flex justify-center">
       <AnimatePresence mode="wait" initial={false}>
         <motion.img
           key={currentIndex}
@@ -40,6 +40,6 @@ export function Watch() {
           transition={{ duration: 1 }}
         />
       </AnimatePresence>
-    </>
+    </div>
   );
 }
