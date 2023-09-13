@@ -2,7 +2,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const logos = ["watch-1.png", "watch-2.png", "watch-3.png"];
+const logos = [
+  "watch-1.png",
+  "watch-2.png",
+  "watch-3.png",
+  "watch-4.png",
+  "watch-5.png",
+  "watch-6.png",
+  "watch-7.png",
+];
 
 export function Watch() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +20,7 @@ export function Watch() {
       setCurrentIndex((prevIndex) =>
         prevIndex === logos.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Troque o valor para ajustar a velocidade do carrossel
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
