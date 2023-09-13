@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 export function Footer() {
     return (
         <div className="h-40 bg-foreground/5">
-            <div className="max-w-screen-xl relative mx-auto px-4">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4">
                 <div className="space-y-6">
 
                     <div className="flex gap-2 pt-6">
