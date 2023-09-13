@@ -10,9 +10,9 @@ import {
   navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 
-export function Header() {
+export function Navbar() {
   return (
-    <div className="max-w-[1300px] w-[100%] relative mx-auto px-4">
+    <nav className="max-w-[1300px] w-[100%] relative mx-auto px-4">
       <div className="flex justify-between">
         <div className="self-center">
           <Clock4 />
@@ -33,6 +33,6 @@ export function Header() {
           </NavigationMenu>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
