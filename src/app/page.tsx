@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/card";
 import { Slide } from "react-awesome-reveal";
 import { LinearGradient } from "react-text-gradients";
+// @ts-ignore
+import ReactWhatsappButton from "react-whatsapp-button";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -40,6 +42,12 @@ export default function Home() {
         </>
       ) : (
         <div className="main">
+          <ReactWhatsappButton
+            countryCode="55"
+            phoneNumber="27997847096"
+            animated
+            message="Olá, quero conhecer os relógios!"
+          />
           <div className="min-h-screen bg-foreground/5 py-20 ">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8 flex justify-between phone:grid">
               <div className="self-center">
