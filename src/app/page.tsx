@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/loader";
 import { Watch } from "@/components/watch";
+import { LogoSlider } from "@/components/logo-slider";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -80,11 +81,22 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="h-screen bg-foreground/70 flex justify-center px-4 py-20">
+          <div className="bg-foreground/80 flex justify-center py-20">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-background  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
                   As principais marcas do mercado.
+                </h1>
+                <LogoSlider />
+              </div>
+            </div>
+          </div>
+
+          <div className="h-screen bg-secondary flex justify-center py-20">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+              <div className="">
+                <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  Sobre nossos relógios
                 </h1>
               </div>
             </div>
