@@ -15,6 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Slide } from "react-awesome-reveal";
+import { LinearGradient } from "react-text-gradients";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -49,7 +50,13 @@ export default function Home() {
                 variants={variants}
                 transition={{ type: "spring", damping: 20, stiffness: 100 }}
               >
-                Os relógios de luxo mais vendidos do Brasil.
+                Os relógios de &nbsp;
+                <span>
+                  <LinearGradient gradient={["to left", "#ebd197 , #b48811 "]}>
+                    luxo
+                  </LinearGradient>
+                </span>
+                &nbsp; mais vendidos do Brasil.
               </motion.h1>
 
               <motion.p
