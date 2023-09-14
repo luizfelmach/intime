@@ -105,7 +105,27 @@ export default function Home() {
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
-                  Sobre os nossos relógios
+                  Sobre os nossos relógios.
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-screen bg-[#a1785c] flex justify-center py-20">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+              <div className="">
+                <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  Sobre a loja.
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-screen bg-background flex justify-center py-20">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+              <div className="">
+                <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  Avaliações.
                 </h1>
               </div>
             </div>
@@ -187,7 +207,7 @@ export default function Home() {
                           Boleto bancário
                         </CardTitle>
                         <CardDescription className="text-secondary">
-                          À Vista.
+                          À vista.
                         </CardDescription>
                       </CardHeader>
                       <CardContent className="flex justify-center">
