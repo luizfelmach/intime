@@ -85,9 +85,10 @@ export default function Home() {
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-background  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
-                  As principais marcas do mercado.
+                  Temos as melhores marcas do mercado.
                 </h1>
-                <LogoSlider />
+                <LogoSlider direction={"left"} />
+                <LogoSlider direction={"right"} />
               </div>
             </div>
           </div>

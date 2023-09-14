@@ -9,9 +9,11 @@ const logos = [
   { id: 5, src: "/brand/ea.png", alt: "Logo 2" },
 ];
 
-export function LogoSlider() {
+type directionType = "left" | "right" | "up" | "down";
+
+export function LogoSlider({ direction }: { direction: directionType }) {
   return (
-    <Marquee speed={50} style={{ width: "100%" }}>
+    <Marquee speed={50} direction={direction} style={{ width: "100%" }}>
       {logos.map((logo) => (
         <div
           key={logo.id}
@@ -21,8 +23,8 @@ export function LogoSlider() {
             className="object-contain"
             src={logo.src}
             alt={logo.alt}
-            width={150}
-            height={150}
+            width={200}
+            height={200}
             priority
           />
         </div>
