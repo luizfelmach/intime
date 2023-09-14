@@ -12,27 +12,29 @@ import {
 
 export function Navbar() {
   return (
-    <nav className="max-w-[1300px] w-[100%] relative mx-auto px-4">
-      <div className="flex justify-between">
-        <div className="self-center">
-          <Clock4 />
+    <header className=" bg-background/90 backdrop-blur-3xl fixed top-0 left-0 right-0 z-10">
+      <nav className="max-w-[1300px] w-[100%] relative mx-auto px-4">
+        <div className="flex justify-between">
+          <div className="self-center">
+            <Clock4 />
+          </div>
+          <div>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <Link href="#" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()}`}
+                    >
+                      Comprar
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         </div>
-        <div>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="#" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()}`}
-                  >
-                    Comprar
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
