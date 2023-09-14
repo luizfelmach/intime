@@ -81,7 +81,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="bg-foreground/80 flex justify-center py-20">
+          <div className="min-h-screen bg-foreground/80 flex justify-center py-20">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-background  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
