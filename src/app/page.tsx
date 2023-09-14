@@ -48,7 +48,7 @@ export default function Home() {
             animated
             message="Olá, quero conhecer os relógios!"
           />
-          <div className="min-h-screen bg-foreground/5 py-52 ">
+          <div className="min-h-screen bg-foreground/5 py-52 phone:py-20 ">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8 flex justify-between phone:grid">
               <div className="self-center">
                 <motion.h1
