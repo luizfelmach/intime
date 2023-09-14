@@ -130,12 +130,105 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="h-screen bg-[#a1785c] flex justify-center py-20">
+          <div className="min-h-screen bg-[#a1785c]/60 flex justify-center py-20">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
-                <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
-                  Sobre a loja.
+                <h1 className="scroll-m-20 text-foreground/70  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  Sobre a In Time Relógios.
                 </h1>
+
+                <div className="h-40 w-40 bg-orange-950/40 blur-3xl absolute top-0 right-0 "></div>
+                <div className="h-40 w-40 bg-orange-950/40 blur-3xl absolute bottom-0 left-0 "></div>
+
+                <div className="space-y-16">
+                  <div className="flex justify-start gap-4">
+                    <Image
+                      className="verysmall:hidden"
+                      src={"/about/quality.svg"}
+                      alt="Qualidade da In Time Relógios"
+                      height={110}
+                      width={110}
+                    />
+                    <div>
+                      <h1 className="scroll-m-20 text-background/50  pb-2 text-2xl font-black tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                        Qualidade.
+                      </h1>
+                      <p className="text-right max-w-[500px] leading-7 [&:not(:first-child)]:mt-6 whitespace-normal font-semibold text-foreground/50">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Hic eius labore adipisci ea sequi ullam maxime
+                        libero illum consequatur consectetur dignissimos, porro,
+                        repudiandae doloribus quibusdam voluptate sint corporis
+                        nemo in?
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-4">
+                    <div>
+                      <h1 className="scroll-m-20 text-background/50  pb-2 text-2xl font-black tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                        Atendimento.
+                      </h1>
+                      <p className="max-w-[500px] leading-7 [&:not(:first-child)]:mt-6 whitespace-normal font-semibold text-foreground/50">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Hic eius labore adipisci ea sequi ullam maxime
+                        libero illum consequatur consectetur dignissimos, porro,
+                        repudiandae doloribus quibusdam voluptate sint corporis
+                        nemo in?
+                      </p>
+                    </div>
+                    <Image
+                      className="verysmall:hidden"
+                      src={"/about/service.svg"}
+                      alt="Qualidade da In Time Relógios"
+                      height={120}
+                      width={120}
+                    />
+                  </div>
+
+                  <div className="flex justify-start gap-4">
+                    <Image
+                      className="verysmall:hidden"
+                      src={"/about/shipping.svg"}
+                      alt="Qualidade da In Time Relógios"
+                      height={120}
+                      width={120}
+                    />
+                    <div>
+                      <h1 className="scroll-m-20 text-background/50  pb-2 text-2xl tracking-tight font-black transition-colors mb-8 max-w-[400px] whitespace-normal">
+                        Entrega.
+                      </h1>
+                      <p className="text-right max-w-[500px] leading-7 [&:not(:first-child)]:mt-6 whitespace-normal text-foreground/50 font-semibold">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Hic eius labore adipisci ea sequi ullam maxime
+                        libero illum consequatur consectetur dignissimos, porro,
+                        repudiandae doloribus quibusdam voluptate sint corporis
+                        nemo in?
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-4">
+                    <div>
+                      <h1 className="scroll-m-20 text-background/50 pb-2 text-2xl font-black tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                        Garantia.
+                      </h1>
+                      <p className="max-w-[500px] leading-7 [&:not(:first-child)]:mt-6 whitespace-normal text-foreground/50 font-semibold">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Hic eius labore adipisci ea sequi ullam maxime
+                        libero illum consequatur consectetur dignissimos, porro,
+                        repudiandae doloribus quibusdam voluptate sint corporis
+                        nemo in?
+                      </p>
+                    </div>
+                    <Image
+                      className="verysmall:hidden"
+                      src={"/about/guarantee.svg"}
+                      alt="Qualidade da In Time Relógios"
+                      height={60}
+                      width={60}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
