@@ -40,10 +40,10 @@ export default function Home() {
         </>
       ) : (
         <div className="main">
-          <div className="h-screen bg-foreground/5 flex justify-evenly px-4 py-20 phone:grid tall:h-[calc(100vh+150px)]">
+          <div className="min-h-screen bg-foreground/5 flex justify-evenly px-4 py-20 phone:grid">
             <div className="self-center">
               <motion.h1
-                className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
+                className="scroll-m-20 text-7xl phone:text-5xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
                 initial="initial"
                 animate="animate"
                 exit="exit"
