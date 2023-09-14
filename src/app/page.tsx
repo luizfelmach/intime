@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/loader";
 import { Watch } from "@/components/watch";
 import { LogoSlider } from "@/components/logo-slider";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Slide } from "react-awesome-reveal";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -97,8 +105,102 @@ export default function Home() {
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
-                  Sobre nossos relógios
+                  Sobre os nossos relógios
                 </h1>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-min-screen bg-foreground/80 flex justify-center py-20">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+              <div className="">
+                <h1 className="scroll-m-20 text-background  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
+                  Formas de pagamento.
+                </h1>
+
+                <div className="grid grid-cols-2 gap-4 phone:grid-cols-1">
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <Card className="border-none bg-secondary/5 h-80">
+                      <CardHeader>
+                        <CardTitle className="text-secondary">
+                          Dinheiro
+                        </CardTitle>
+                        <CardDescription className="text-secondary">
+                          Pagamentos em espécie: a opção financeira clássica.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex justify-center">
+                        <Image
+                          src={"/payment/money.gif"}
+                          alt="Pagamento em dinheiro"
+                          height={180}
+                          width={180}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Slide>
+
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <Card className="border-none bg-secondary/5 h-80">
+                      <CardHeader>
+                        <CardTitle className="text-secondary">
+                          Cartão de crédito ou débito
+                        </CardTitle>
+                        <CardDescription className="text-secondary">
+                          Parcelamos em até 4X com taxas.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex justify-center">
+                        <Image
+                          src={"/payment/credit.gif"}
+                          alt="Pagamento em dinheiro"
+                          height={200}
+                          width={200}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Slide>
+
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <Card className="border-none bg-secondary/5 h-80">
+                      <CardHeader>
+                        <CardTitle className="text-secondary">PIX</CardTitle>
+                        <CardDescription className="text-secondary">
+                          Forma de pagamento com o PIX.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex justify-center">
+                        <Image
+                          src={"/payment/pix.gif"}
+                          alt="Pagamento em dinheiro"
+                          height={150}
+                          width={150}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Slide>
+
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <Card className="border-none bg-secondary/5 h-80">
+                      <CardHeader>
+                        <CardTitle className="text-secondary">
+                          Boleto bancário
+                        </CardTitle>
+                        <CardDescription className="text-secondary">
+                          À Vista.
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="flex justify-center">
+                        <Image
+                          src={"/payment/bankslip.gif"}
+                          alt="Pagamento em dinheiro"
+                          height={150}
+                          width={150}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Slide>
+                </div>
               </div>
             </div>
           </div>
