@@ -40,60 +40,64 @@ export default function Home() {
         </>
       ) : (
         <div className="main">
-          <div className="min-h-screen bg-foreground/5 flex justify-evenly px-4 py-20 phone:grid">
-            <div className="self-center">
-              <motion.h1
-                className="scroll-m-20 text-7xl phone:text-5xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={variants}
-                transition={{ type: "spring", damping: 20, stiffness: 100 }}
-              >
-                Os relógios de &nbsp;
-                <span>
-                  <LinearGradient gradient={["to left", "#ebd197 , #b48811 "]}>
-                    luxo
-                  </LinearGradient>
-                </span>
-                &nbsp; mais vendidos do Brasil.
-              </motion.h1>
+          <div className="min-h-screen bg-foreground/5 py-20 ">
+            <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8 flex justify-between phone:grid">
+              <div className="self-center">
+                <motion.h1
+                  className="scroll-m-20 text-7xl phone:text-5xl tablet:text-5xl font-extrabold tracking-tight lg:text-5xl max-w-[400px] whitespace-normal"
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={variants}
+                  transition={{ type: "spring", damping: 20, stiffness: 100 }}
+                >
+                  Os relógios de &nbsp;
+                  <span>
+                    <LinearGradient
+                      gradient={["to left", "#ebd197 , #b48811 "]}
+                    >
+                      luxo
+                    </LinearGradient>
+                  </span>
+                  &nbsp; mais vendidos do Brasil.
+                </motion.h1>
 
-              <motion.p
-                className="leading-7 [&:not(:first-child)]:mt-6 max-w-[400px] whitespace-normal text-foreground/50"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={variants}
-                transition={{ type: "spring", damping: 30, stiffness: 100 }}
-              >
-                Descubra a elegância com mais de 800 modelos de relógios de luxo
-                masculinos e femininos, disponíveis em uma paleta de cores
-                exclusiva.
-              </motion.p>
+                <motion.p
+                  className="leading-7 [&:not(:first-child)]:mt-6 max-w-[400px] whitespace-normal text-foreground/50"
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={variants}
+                  transition={{ type: "spring", damping: 30, stiffness: 100 }}
+                >
+                  Descubra a elegância com mais de 800 modelos de relógios de
+                  luxo masculinos e femininos, disponíveis em uma paleta de
+                  cores exclusiva.
+                </motion.p>
 
+                <motion.div
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  variants={variants}
+                  transition={{ type: "spring", damping: 30, stiffness: 100 }}
+                >
+                  <Button className="my-8 font-bold" size={"lg"}>
+                    Descubra
+                  </Button>
+                </motion.div>
+              </div>
               <motion.div
                 initial="initial"
                 animate="animate"
                 exit="exit"
                 variants={variants}
-                transition={{ type: "spring", damping: 30, stiffness: 100 }}
+                transition={{ type: "spring", damping: 80, stiffness: 100 }}
+                className="self-center"
               >
-                <Button className="my-8 font-bold" size={"lg"}>
-                  Descubra
-                </Button>
+                <Watch />
               </motion.div>
             </div>
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={variants}
-              transition={{ type: "spring", damping: 80, stiffness: 100 }}
-              className="self-center"
-            >
-              <Watch />
-            </motion.div>
           </div>
 
           <div className="min-h-screen bg-foreground/80 flex justify-center py-20">
