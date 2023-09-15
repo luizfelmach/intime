@@ -61,12 +61,13 @@ export function Faq() {
 
             <AccordionItem value="item-4">
               <AccordionTrigger className="gap-8 text-left text-foreground/70">
-                Os relógios são à prova d'água?
+                Os relógios são à prova d&apos;água?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
-                A maioria dos nossos relógios é vedada e é à prova d'água até 20
-                metros de profundidade. Em nossa tabela de preços, os modelos
-                que não são vedados estão marcados como "Não Veda".
+                A maioria dos nossos relógios é vedada e é à prova d&apos;água
+                até 20 metros de profundidade. Em nossa tabela de preços, os
+                modelos que não são vedados estão marcados como &quot;Não
+                Veda&quot;.
               </AccordionContent>
             </AccordionItem>
 
