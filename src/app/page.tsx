@@ -18,6 +18,8 @@ import { Slide } from "react-awesome-reveal";
 import { LinearGradient } from "react-text-gradients";
 // @ts-ignore
 import ReactWhatsappButton from "react-whatsapp-button";
+import { Review } from "@/components/review";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -246,12 +248,26 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="h-screen bg-background flex justify-center py-20">
+          <div className="min-h-screen bg-background flex justify-center py-20">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
                   Avaliações.
                 </h1>
+                <div className="grid gap-4 grid-cols-2  phone:grid-cols-1 ">
+                  <Review
+                    name="Luiz"
+                    review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                  />
+                  <Review
+                    name="Luiz"
+                    review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                  />
+                  <Review
+                    name="Luiz"
+                    review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                  />
+                </div>
               </div>
             </div>
           </div>
