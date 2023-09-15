@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 import { LinearGradient } from "react-text-gradients";
 // @ts-ignore
 import ReactWhatsappButton from "react-whatsapp-button";
@@ -256,26 +256,28 @@ export default function Home() {
                 </h1>
                 <ScrollArea className="rounded-md p-4">
                   <div className="flex gap-4">
-                    <Review
-                      name="Luiz"
-                      review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
-                    />
-                    <Review
-                      name="Luiz"
-                      review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
-                    />
-                    <Review
-                      name="Luiz"
-                      review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
-                    />
-                    <Review
-                      name="Luiz"
-                      review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
-                    />
-                    <Review
-                      name="Luiz"
-                      review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
-                    />
+                    <Fade>
+                      <Review
+                        name="Luiz"
+                        review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                      />
+                      <Review
+                        name="Luiz"
+                        review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                      />
+                      <Review
+                        name="Luiz"
+                        review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                      />
+                      <Review
+                        name="Luiz"
+                        review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                      />
+                      <Review
+                        name="Luiz"
+                        review="Gostaria de expressar minha satisfação com a minha recente compra em sua loja. Adquiri um relógio que realmente superou todas as minhas expectativas e se tornou uma peça essencial no meu dia a dia."
+                      />
+                    </Fade>
                   </div>
                   <ScrollBar orientation="horizontal" />
                 </ScrollArea>
