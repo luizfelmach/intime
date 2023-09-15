@@ -7,7 +7,7 @@ import {
 
 export function Faq() {
   return (
-    <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
+    <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-20">
       <div className="">
         <h1 className="scroll-m-20  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8">
           Perguntas frequentes.
