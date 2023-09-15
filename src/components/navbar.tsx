@@ -29,7 +29,12 @@ export function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="#" legacyBehavior passHref>
+                  <Link
+                    href="https://api.whatsapp.com/send/?phone=5527997847096&text=&text=Ol%C3%A1,%20quero%20conhecer%20os%20rel%C3%B3gios!"
+                    legacyBehavior
+                    passHref
+                    target="_blank"
+                  >
                     <NavigationMenuLink
                       className={`${navigationMenuTriggerStyle()}`}
                     >

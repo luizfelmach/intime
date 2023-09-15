@@ -20,6 +20,7 @@ import { LinearGradient } from "react-text-gradients";
 import ReactWhatsappButton from "react-whatsapp-button";
 import { Review } from "@/components/review";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Link from "next/link";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -93,8 +94,15 @@ export default function Home() {
                   variants={variants}
                   transition={{ type: "spring", damping: 30, stiffness: 100 }}
                 >
-                  <Button className="my-8 font-bold" size={"lg"}>
-                    Descubra
+                  <Button className="my-8 font-bold" size={"lg"} asChild>
+                    <Link
+                      href={
+                        "https://api.whatsapp.com/send/?phone=5527997847096&text=&text=Ol%C3%A1,%20quero%20conhecer%20os%20rel%C3%B3gios!"
+                      }
+                      target="_blank"
+                    >
+                      Descubra
+                    </Link>
                   </Button>
                 </motion.div>
               </div>
