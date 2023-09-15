@@ -148,77 +148,61 @@ export default function Home() {
                   Sobre os nossos relógios.
                 </h1>
                 <div className="grid grid-cols-2 tablet:grid-cols-1 gap-4">
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <MediaPlayer
+                      src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                      poster="/logo.svg"
+                      crossorigin=""
+                      className=""
+                    >
+                      <MediaOutlet>
+                        <MediaPoster alt="Detalhes dos relógios In Time!" />
+                      </MediaOutlet>
+                      <MediaCommunitySkin />
+                    </MediaPlayer>
+                  </Slide>
 
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <MediaPlayer
+                      src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                      poster="/logo.svg"
+                      crossorigin=""
+                      className=""
+                    >
+                      <MediaOutlet>
+                        <MediaPoster alt="Detalhes dos relógios In Time!" />
+                      </MediaOutlet>
+                      <MediaCommunitySkin />
+                    </MediaPlayer>
+                  </Slide>
 
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <MediaPlayer
+                      src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                      poster="/logo.svg"
+                      crossorigin=""
+                      className=""
+                    >
+                      <MediaOutlet>
+                        <MediaPoster alt="Detalhes dos relógios In Time!" />
+                      </MediaOutlet>
+                      <MediaCommunitySkin />
+                    </MediaPlayer>
+                  </Slide>
 
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
-
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
-
-                  <MediaPlayer
-                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
-                    poster="/logo.svg"
-                    crossorigin=""
-                    className=""
-                  >
-                    <MediaOutlet>
-                      <MediaPoster alt="Detalhes dos relógios In Time!" />
-                    </MediaOutlet>
-                    <MediaCommunitySkin />
-                  </MediaPlayer>
+                  <Slide direction="up" duration={500} triggerOnce>
+                    <MediaPlayer
+                      src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                      poster="/logo.svg"
+                      crossorigin=""
+                      className=""
+                    >
+                      <MediaOutlet>
+                        <MediaPoster alt="Detalhes dos relógios In Time!" />
+                      </MediaOutlet>
+                      <MediaCommunitySkin />
+                    </MediaPlayer>
+                  </Slide>
                 </div>
               </div>
             </div>
