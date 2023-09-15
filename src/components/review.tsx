@@ -7,7 +7,7 @@ type ReviewProps = {
 
 export function Review({ name, review }: ReviewProps) {
   return (
-    <Card className="bg-foreground/5 border-none ">
+    <Card className="w-[300px] bg-foreground/5 border-none min-h-[60vh]">
       <CardHeader>
         <CardTitle className="font-black text-foreground/80">{name}</CardTitle>
       </CardHeader>
