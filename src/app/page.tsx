@@ -22,6 +22,16 @@ import { Review } from "@/components/review";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Link from "next/link";
 
+import "vidstack/styles/defaults.css";
+import "vidstack/styles/community-skin/video.css";
+
+import {
+  MediaCommunitySkin,
+  MediaOutlet,
+  MediaPlayer,
+  MediaPoster,
+} from "@vidstack/react";
+
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -131,12 +141,85 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="h-screen bg-secondary flex justify-center py-20">
+          <div className="min-h-screen bg-secondary flex justify-center py-20">
             <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-8">
               <div className="">
                 <h1 className="scroll-m-20 text-foreground  pb-2 text-4xl font-semibold tracking-tight transition-colors mb-8 max-w-[400px] whitespace-normal">
                   Sobre os nossos relógios.
                 </h1>
+                <div className="grid grid-cols-2 tablet:grid-cols-1 gap-4">
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+
+                  <MediaPlayer
+                    src="https://stream.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/low.mp4"
+                    poster="/logo.svg"
+                    crossorigin=""
+                    className=""
+                  >
+                    <MediaOutlet>
+                      <MediaPoster alt="Detalhes dos relógios In Time!" />
+                    </MediaOutlet>
+                    <MediaCommunitySkin />
+                  </MediaPlayer>
+                </div>
               </div>
             </div>
           </div>
