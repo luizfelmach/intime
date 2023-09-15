@@ -371,10 +371,10 @@ export default function Home() {
                   <Slide direction="up" duration={500} triggerOnce>
                     <Card className="border-none bg-secondary/5 h-80">
                       <CardHeader>
-                        <CardTitle className="text-secondary">
+                        <CardTitle className="text-secondary/50 font-black">
                           Dinheiro
                         </CardTitle>
-                        <CardDescription className="text-secondary">
+                        <CardDescription className="text-secondary/50 font-semibold">
                           Pagamentos em espécie: a opção financeira clássica.
                         </CardDescription>
                       </CardHeader>
@@ -392,10 +392,10 @@ export default function Home() {
                   <Slide direction="up" duration={500} triggerOnce>
                     <Card className="border-none bg-secondary/5 h-80">
                       <CardHeader>
-                        <CardTitle className="text-secondary">
+                        <CardTitle className="text-secondary/50 font-black">
                           Cartão de crédito ou débito
                         </CardTitle>
-                        <CardDescription className="text-secondary">
+                        <CardDescription className="text-secondary/50 font-semibold">
                           Parcelamos em até 4X com taxas.
                         </CardDescription>
                       </CardHeader>
@@ -413,8 +413,10 @@ export default function Home() {
                   <Slide direction="up" duration={500} triggerOnce>
                     <Card className="border-none bg-secondary/5 h-80">
                       <CardHeader>
-                        <CardTitle className="text-secondary">PIX</CardTitle>
-                        <CardDescription className="text-secondary">
+                        <CardTitle className="text-secondary/50 font-black">
+                          PIX
+                        </CardTitle>
+                        <CardDescription className="text-secondary/50 font-semibold">
                           Forma de pagamento com o PIX.
                         </CardDescription>
                       </CardHeader>
@@ -432,10 +434,10 @@ export default function Home() {
                   <Slide direction="up" duration={500} triggerOnce>
                     <Card className="border-none bg-secondary/5 h-80">
                       <CardHeader>
-                        <CardTitle className="text-secondary">
+                        <CardTitle className="text-secondary/50 font-black">
                           Boleto bancário
                         </CardTitle>
-                        <CardDescription className="text-secondary">
+                        <CardDescription className="text-secondary/50 font-semibold">
                           À vista.
                         </CardDescription>
                       </CardHeader>
