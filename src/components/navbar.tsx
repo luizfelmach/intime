@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Clock4 } from "lucide-react";
+import { Clock4, ShoppingCart } from "lucide-react";
 
 import {
   NavigationMenu,
@@ -27,7 +27,7 @@ export function Navbar() {
                     <NavigationMenuLink
                       className={`${navigationMenuTriggerStyle()}`}
                     >
-                      Comprar
+                      <ShoppingCart />
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
