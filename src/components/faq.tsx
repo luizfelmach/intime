@@ -16,7 +16,7 @@ export function Faq() {
         <div className="mb-8">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
@@ -25,7 +25,7 @@ export function Faq() {
             </AccordionItem>
 
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
@@ -34,7 +34,7 @@ export function Faq() {
             </AccordionItem>
 
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
@@ -43,7 +43,7 @@ export function Faq() {
             </AccordionItem>
 
             <AccordionItem value="item-4">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
@@ -52,7 +52,7 @@ export function Faq() {
             </AccordionItem>
 
             <AccordionItem value="item-5">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
@@ -61,7 +61,7 @@ export function Faq() {
             </AccordionItem>
 
             <AccordionItem value="item-6">
-              <AccordionTrigger className="text-foreground/70">
+              <AccordionTrigger className="gap-8 text-left text-foreground/70">
                 Os relógios já estão no Brasil a pronta entrega?
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
