@@ -22,6 +22,7 @@ export function Navbar() {
               alt="In Time Relógios"
               width={140}
               height={140}
+              priority
             />
           </div>
           <div>
