@@ -47,15 +47,15 @@ export function Faq() {
               </AccordionTrigger>
               <AccordionContent className="text-foreground/70">
                 As características dos nossos relógios incluem uma réplica
-                perfeita de primeira linha (AAA), importados dos EUA, com
-                maquinários Citizen ou Italiano, variando entre automáticos, de
-                corda ou a bateria. Eles possuem vidro de Safira Anti-Risco ou
-                Mineral Anti-Risco, com opções de catraca de cerâmica em alguns
-                modelos e pulseiras de couro, aço, borracha ou cerâmica, de
-                acordo com as especificações do modelo original. Tamanho e peso
-                são idênticos aos originais, e o funcionamento dos ponteiros é
-                uma reprodução fiel, assegurando uma experiência autêntica aos
-                nossos clientes.
+                perfeita de primeira linha &#40;AAA&#41;, importados dos EUA,
+                com maquinários Citizen ou Italiano, variando entre automáticos,
+                de corda ou a bateria. Eles possuem vidro de Safira Anti-Risco
+                ou Mineral Anti-Risco, com opções de catraca de cerâmica em
+                alguns modelos e pulseiras de couro, aço, borracha ou cerâmica,
+                de acordo com as especificações do modelo original. Tamanho e
+                peso são idênticos aos originais, e o funcionamento dos
+                ponteiros é uma reprodução fiel, assegurando uma experiência
+                autêntica aos nossos clientes.
               </AccordionContent>
             </AccordionItem>
 
