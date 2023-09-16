@@ -31,6 +31,8 @@ import {
   MediaPlayer,
   MediaPoster,
 } from "@vidstack/react";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -55,6 +57,8 @@ export default function Home() {
         </>
       ) : (
         <div className="main">
+          <Navbar />
+
           <ReactWhatsappButton
             countryCode="55"
             phoneNumber="27997847096"
@@ -457,6 +461,7 @@ export default function Home() {
           </div>
 
           <Faq />
+          <Footer />
         </div>
       )}
     </>
