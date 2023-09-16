@@ -377,6 +377,13 @@ export function Clock({
           className={`origin-center ${
             disableRealClock ? "animate-spin-slow-2" : ""
           }`}
+          style={
+            disableRealClock
+              ? {}
+              : {
+                  rotate: `${minuteAngle}deg`,
+                }
+          }
         />
         <path
           id="second-hand"
@@ -387,6 +394,13 @@ export function Clock({
           className={`origin-center ${
             disableRealClock ? "animate-spin-slow-1" : ""
           }`}
+          style={
+            disableRealClock
+              ? {}
+              : {
+                  rotate: `${secondAngle}deg`,
+                }
+          }
         />
         <path
           id="hour-hand"
@@ -397,6 +411,13 @@ export function Clock({
           className={`origin-center ${
             disableRealClock ? "animate-spin-slow-3" : ""
           }`}
+          style={
+            disableRealClock
+              ? {}
+              : {
+                  rotate: `${hourAngle}deg`,
+                }
+          }
         />
         <circle id="pin" cx="500.5" cy="500.5" r="7.5" fill="white" />
       </g>
