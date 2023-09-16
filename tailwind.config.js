@@ -75,6 +75,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "spin-slow-1": "spin 1s linear infinite",
+        "spin-slow-2": "spin 2s linear infinite",
+        "spin-slow-3": "spin 4s linear infinite",
       },
     },
   },
