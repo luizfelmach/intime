@@ -374,51 +374,67 @@ export function Clock({
           stroke="white"
           strokeWidth={stroke2}
           strokeLinecap="round"
-          className={`origin-center ${
-            disableRealClock ? "animate-spin-slow-2" : ""
-          }`}
-          style={
-            disableRealClock
-              ? {}
-              : {
-                  rotate: `${minuteAngle}deg`,
-                }
-          }
-        />
+          transform={`rotate(${minuteAngle} 500 500)`}
+        >
+          {disableRealClock ? (
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              from="0 500 500"
+              to="360 500 500"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          ) : (
+            <></>
+          )}
+        </path>
+
         <path
           id="second-hand"
           d="M500 500V320"
           stroke="#AD2D2D"
           strokeWidth={stroke1}
           strokeLinecap="round"
-          className={`origin-center ${
-            disableRealClock ? "animate-spin-slow-1" : ""
-          }`}
-          style={
-            disableRealClock
-              ? {}
-              : {
-                  rotate: `${secondAngle}deg`,
-                }
-          }
-        />
+          transform={`rotate(${secondAngle} 500 500)`}
+        >
+          {disableRealClock ? (
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              from="0 500 500"
+              to="360 500 500"
+              dur="0.5s"
+              repeatCount="indefinite"
+            />
+          ) : (
+            <></>
+          )}
+        </path>
         <path
           id="hour-hand"
           d="M500 500V380"
           stroke="white"
           strokeWidth={stroke2}
           strokeLinecap="round"
-          className={`origin-center ${
-            disableRealClock ? "animate-spin-slow-3" : ""
-          }`}
-          style={
-            disableRealClock
-              ? {}
-              : {
-                  rotate: `${hourAngle}deg`,
-                }
-          }
-        />
+          transform={`rotate(${hourAngle} 500 500)`}
+        >
+          {disableRealClock ? (
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              from="0 500 500"
+              to="360 500 500"
+              dur="1s"
+              repeatCount="indefinite"
+            />
+          ) : (
+            <></>
+          )}
+        </path>
         <circle id="pin" cx="500.5" cy="500.5" r="7.5" fill="white" />
       </g>
     </svg>
