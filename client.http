@@ -1,9 +1,13 @@
 ### Variables 
 @apiurl = http://localhost:3000/api
 
-### GET watchs
+### watchs
 GET {{apiurl}}/watch HTTP/1.1
 
 
-### GET categories
+### categories
 GET {{apiurl}}/category HTTP/1.1
+
+
+### brands
+GET {{apiurl}}/brand HTTP/1.1
