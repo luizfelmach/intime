@@ -1,0 +1,5 @@
+### Variables 
+@apiurl = http://localhost:3000/api
+
+### GET watchs
+GET {{apiurl}}/watch HTTP/1.1
