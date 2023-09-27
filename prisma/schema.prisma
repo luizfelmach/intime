@@ -10,13 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Category {
+model WatchCategory {
   id    Int     @id @default(autoincrement())
   label String
   Watch Watch[]
 }
 
-model Brand {
+model WatchBrand {
   id    Int     @id @default(autoincrement())
   label String
   Watch Watch[]
@@ -29,8 +29,9 @@ model Watch {
   price       Float
   images      String[]
   videos      String[]
-  Brand       Brand    @relation(fields: [brandId], references: [id])
-  brandId     Int
-  Category    Category @relation(fields: [categoryId], references: [id])
-  categoryId  Int
+
+  WatchBrand      WatchBrand    @relation(fields: [watchBrandId], references: [id])
+  watchBrandId    Int
+  WatchCategory   WatchCategory @relation(fields: [watchCategoryId], references: [id])
+  watchCategoryId Int
 }
