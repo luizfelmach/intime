@@ -1,5 +1,6 @@
 "use client";
 
+import { WatchCard } from "@/components/watch-card";
 import { Watch } from "@prisma/client";
 import { useEffect, useState } from "react";
 
@@ -22,7 +23,7 @@ export default function Store() {
   return (
     <div className="h-screen">
       {watchs.map((watch) => {
-        return <div key={watch.id}>{watch.name}</div>;
+        return <WatchCard key={watch.id} {...watch} />;
       })}
     </div>
   );
