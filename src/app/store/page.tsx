@@ -73,7 +73,7 @@ export default function Store() {
   }, []);
 
   return (
-    <div className="h-screen">
+    <div className="">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" className="gap-2">
