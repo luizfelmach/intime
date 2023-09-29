@@ -5,6 +5,8 @@ export interface IWatchRepository {
   loadWatchWithFilter(
     page: number,
     category: string | null,
-    brand: string | null
+    brand: string | null,
+    priceMin: number | null,
+    priceMax: number | null
   ): Promise<Watch[]>;
 }

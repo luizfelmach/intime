@@ -2,7 +2,7 @@
 @apiurl = http://localhost:3000/api
 
 ### watchs
-GET {{apiurl}}/watch?p=0&category=Relógios Femininos&brand= HTTP/1.1
+GET {{apiurl}}/watch?p=0&category=Relógios Femininos&brand=&priceMin=50&priceMax=522.98 HTTP/1.1
 
 
 ### categories

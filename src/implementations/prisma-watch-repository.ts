@@ -11,7 +11,9 @@ export class PrismaWatchRepository implements IWatchRepository {
   async loadWatchWithFilter(
     page: number,
     category: string | null,
-    brand: string | null
+    brand: string | null,
+    priceMin: number | null,
+    priceMax: number | null
   ): Promise<Watch[]> {
     const watchs = await prisma.watch.findMany({
       where: {
@@ -24,6 +26,10 @@ export class PrismaWatchRepository implements IWatchRepository {
           label: {
             equals: brand || undefined,
           },
+        },
+        price: {
+          gte: priceMin || undefined,
+          lte: priceMax || undefined,
         },
       },
       take: 20,

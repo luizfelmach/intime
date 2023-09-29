@@ -7,10 +7,14 @@ export async function GET(request: NextRequest) {
     const p = request.nextUrl.searchParams.get("p");
     const category = request.nextUrl.searchParams.get("category");
     const brand = request.nextUrl.searchParams.get("brand");
+    const priceMin = request.nextUrl.searchParams.get("priceMin");
+    const priceMax = request.nextUrl.searchParams.get("priceMax");
     const params = {
       p,
       category,
       brand,
+      priceMin,
+      priceMax,
     };
     const watchs: Watch[] = await loadWatch.execute(params);
     return NextResponse.json(watchs);
