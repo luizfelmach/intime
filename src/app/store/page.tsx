@@ -18,10 +18,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Slider } from "@/components/ui/slider";
 import { WatchCard } from "@/components/watch-card";
 import { Watch } from "@prisma/client";
 import { BadgeX, Filter, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import * as SliderRadix from "@radix-ui/react-slider";
 
 export default function Store() {
   const [watchs, setWatchs] = useState<Watch[]>([]);
@@ -29,6 +31,9 @@ export default function Store() {
   const [brands, setBrands] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("");
   const [brandFilter, setBrandFilter] = useState<string>("");
+  const [priceMinFilter, setPriceMinFilter] = useState<number>(140);
+  const [priceMaxFilter, setPriceMaxFilter] = useState<number>(10000);
+  const [priceDebounce, setPriceDebounce] = useState<number[]>([149, 10000]);
   const [loading, setLoading] = useState<boolean>(true);
   const [fetching, setFetching] = useState<boolean>(false);
   const [pagination, setPagination] = useState<number>(0);
@@ -60,6 +65,12 @@ export default function Store() {
     setWatchs([]);
     setPagination(0);
     setBrandFilter("");
+  };
+
+  const handleChangePrice = (e: number[]) => {
+    const a = setTimeout(() => {
+      console.log("EXECUTOU");
+    }, 1000);
   };
 
   const fetchItems = async () => {
@@ -135,6 +146,18 @@ export default function Store() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log(priceDebounce);
+      setPriceMinFilter(priceDebounce[0]);
+      setPriceMaxFilter(priceDebounce[1]);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [priceDebounce]);
 
   return (
     <div className="">
@@ -227,6 +250,20 @@ export default function Store() {
             <div className="w-full h-full grid grid-cols-4 px1050:grid-cols-1 gap-4">
               <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2">
                 <div className="m-8 space-y-8">
+                  <div>
+                    <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
+                      Preço
+                    </h4>
+                    <div className="flex justify-evenly py-2 font-extralight">
+                      <span>{`R$ ${priceDebounce[0].toFixed(1)}`}</span>
+                      <span>{`R$ ${priceDebounce[1].toFixed(1)}`}</span>
+                    </div>
+                    <Slider
+                      defaultValue={[priceDebounce[0], priceDebounce[1]]}
+                      max={10000}
+                      onValueChange={(e) => setPriceDebounce(e)}
+                    />
+                  </div>
                   <div>
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
                       Categorias
