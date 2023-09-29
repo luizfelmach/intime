@@ -6,7 +6,7 @@ import { ShoppingBag } from "lucide-react";
 export function WatchCard(watchProps: Watch) {
   const { name, description, images, videos, price } = watchProps;
   return (
-    <div className="w-80 tablet:w-full bg-foreground/10 rounded-2xl overflow-hidden">
+    <div className="w-72 tablet:w-full bg-foreground/10 rounded-2xl overflow-hidden flex-grow">
       <div className="flex justify-center w-full h-56">
         <Image
           alt={name}

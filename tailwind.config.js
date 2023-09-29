@@ -19,6 +19,7 @@ module.exports = {
       verysmall: { max: "350px" },
       phone: { max: "500px" },
       tablet: { max: "650px" },
+      px1050: { max: "1050px" },
       tall: { raw: "(max-height: 900px)" },
     },
     extend: {
