@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { Loader } from "@/components/loader";
 import { Logo } from "@/components/logo";
 import { Navbar } from "@/components/navbar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -19,7 +20,7 @@ import {
 } from "@/components/ui/sheet";
 import { WatchCard } from "@/components/watch-card";
 import { Watch } from "@prisma/client";
-import { Filter } from "lucide-react";
+import { BadgeX, Filter, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Store() {
@@ -30,34 +31,65 @@ export default function Store() {
   const [brandFilter, setBrandFilter] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [fetching, setFetching] = useState<boolean>(false);
+  const [pagination, setPagination] = useState<number>(0);
+  const [hasMore, setHasMore] = useState<boolean>(true);
 
   const handleChangeCategoryFilter = (e: string) => {
-    if (e === categoryFilter) {
-      setCategoryFilter("");
-    } else {
-      setCategoryFilter(e);
-    }
+    setFetching(true);
+    setWatchs([]);
+    setPagination(0);
+    setCategoryFilter(e);
   };
 
-  const fetchMoreItems = () => {
+  const handleChangeBrandFilter = (e: string) => {
     setFetching(true);
-    setTimeout(() => {
-      setFetching(false);
-    }, 1000);
+    setWatchs([]);
+    setPagination(0);
+    setBrandFilter(e);
+  };
+
+  const handleRemoveCategoryFilter = () => {
+    setFetching(true);
+    setWatchs([]);
+    setPagination(0);
+    setCategoryFilter("");
+  };
+
+  const handleRemoveBrandFilter = () => {
+    setFetching(true);
+    setWatchs([]);
+    setPagination(0);
+    setBrandFilter("");
+  };
+
+  const fetchItems = async () => {
+    const res = await fetch(
+      `/api/watch?p=${pagination}&category=${categoryFilter}&brand=${brandFilter}`
+    );
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await res.json();
+    if (data.length !== undefined) {
+      if (data.length === 0) {
+        setHasMore(false);
+      }
+      setWatchs((prev) => {
+        const newData = [...prev, ...data];
+        return newData;
+      });
+    }
   };
 
   useEffect(() => {
-    async function getDataWatchs() {
-      const res = await fetch("/api/watch");
-      if (!res.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await res.json();
-      if (data.length !== undefined) {
-        setWatchs(data);
-      }
-      return data;
-    }
+    const execute = async () => {
+      await fetchItems();
+      setFetching(false);
+    };
+    execute();
+  }, [pagination, categoryFilter, brandFilter]);
+
+  useEffect(() => {
     async function getDataCategories() {
       const res = await fetch("/api/category");
       if (!res.ok) {
@@ -80,25 +112,25 @@ export default function Store() {
       }
       return data;
     }
+    async function execute() {
+      await getDataCategories();
+      await getDataBrands();
+      setLoading(false);
+    }
+    execute();
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (
         window.innerHeight + window.scrollY >= document.body.offsetHeight - 1 &&
         !fetching
       ) {
-        fetchMoreItems();
+        setPagination((prev) => prev + 1);
+        setFetching(true);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-
-    async function getAll() {
-      await getDataWatchs();
-      await getDataCategories();
-      await getDataBrands();
-      setLoading(false);
-    }
-    getAll();
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -160,7 +192,10 @@ export default function Store() {
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
                       Marcas
                     </h4>
-                    <RadioGroup>
+                    <RadioGroup
+                      defaultValue={brandFilter}
+                      onValueChange={handleChangeBrandFilter}
+                    >
                       {brands.map((brand, index) => {
                         return (
                           <div
@@ -188,9 +223,9 @@ export default function Store() {
             </Sheet>
           </div>
 
-          <div className="max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
+          <div className="min-h-screen max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
             <div className="w-full h-full grid grid-cols-4 px1050:grid-cols-1 gap-4">
-              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl h-1/4">
+              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2">
                 <div className="m-8 space-y-8">
                   <div>
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
@@ -222,7 +257,10 @@ export default function Store() {
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
                       Marcas
                     </h4>
-                    <RadioGroup>
+                    <RadioGroup
+                      defaultValue={brandFilter}
+                      onValueChange={handleChangeBrandFilter}
+                    >
                       {brands.map((brand, index) => {
                         return (
                           <div
@@ -243,19 +281,42 @@ export default function Store() {
                 </div>
               </nav>
               <div className="col-span-3">
+                <div className="flex gap-4 pb-5">
+                  {categoryFilter !== "" ? (
+                    <Badge
+                      className="h-10 gap-2"
+                      variant="secondary"
+                      onClick={handleRemoveCategoryFilter}
+                    >
+                      {categoryFilter}
+                      <X />
+                    </Badge>
+                  ) : (
+                    <></>
+                  )}
+
+                  {brandFilter !== "" ? (
+                    <Badge
+                      className="h-10 gap-2"
+                      variant="secondary"
+                      onClick={handleRemoveBrandFilter}
+                    >
+                      {brandFilter}
+                      <X />
+                    </Badge>
+                  ) : (
+                    <></>
+                  )}
+                </div>
                 <div className="flex justify-center flex-wrap gap-4">
                   {watchs.map((watch) => {
                     return <WatchCard key={watch.id} {...watch} />;
                   })}
-                  {fetching ? (
-                    <>
-                      <div>
-                        <Logo size={100} disableRealClock />
-                      </div>
-                    </>
-                  ) : (
-                    <></>
-                  )}
+                </div>
+                <div className={"flex justify-center"}>
+                  <div className={`${fetching ? "visible" : "invisible"}`}>
+                    <Logo size={100} disableRealClock />
+                  </div>
                 </div>
               </div>
             </div>
