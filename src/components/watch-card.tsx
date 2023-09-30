@@ -6,26 +6,30 @@ import { ShoppingBag } from "lucide-react";
 export function WatchCard(watchProps: Watch) {
   const { name, description, images, videos, price } = watchProps;
   return (
-    <div className="w-72 tablet:w-full bg-foreground/10 rounded-lg overflow-hidden">
-      <div className="flex justify-center w-full h-56">
-        <Image
-          alt={name}
-          height={100}
-          width={1000}
-          priority
-          className="rounded object-cover"
-          src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCaX6xe2_KiCOA-6_g_FI-BEoDv9ufvOun1et0CztVtUZPORTa86bkZRl0m7rz2TlJOWiJpOuJqLLvM0U542Ix2v9p8yQ=s1600"
-        />
+    <div className="flex-grow basis-60 max-w-[260px] tablet:max-w-[400px] bg-foreground/10 rounded-lg overflow-hidden hover:-translate-y-1 transition-transform border border-foreground/20 cursor-pointer">
+      <div className="flex justify-center pt-1">
+        <div className="bg-foreground/10 rounded w-[97%] h-72 flex justify-center">
+          <Image
+            alt={name}
+            height={1000}
+            width={1000}
+            priority
+            className="rounded object-cover aspect-square w-full"
+            src="/watch-4.png"
+          />
+        </div>
       </div>
       <div className="space-x-4 gap-4">
-        <h1 className="mx-4 text-2xl font-extrabold">{name}</h1>
-        <h1>{price}</h1>
-        <div className="flex justify-around gap-4 mb-4">
+        <h1 className="mx-4 mt-4 text-xl text-ring font-black">{name}</h1>
+        <h4 className="mt-4 scroll-m-20  text-foreground/60 text-lg font-extrabold tracking-tight">
+          {`R$ ${price.toFixed(2)}`}
+        </h4>
+        {/* <div className="flex justify-around gap-4 mb-4">
           <Button variant={"secondary"}>Detalhes</Button>
           <Button>
             <ShoppingBag /> Comprar
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

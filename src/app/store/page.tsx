@@ -22,18 +22,24 @@ import { Slider } from "@/components/ui/slider";
 import { WatchCard } from "@/components/watch-card";
 import { Watch } from "@prisma/client";
 import { BadgeX, Filter, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as SliderRadix from "@radix-ui/react-slider";
 
+const priceMaxLabel = 10000;
+
 export default function Store() {
+  const isMounted = useRef(false);
   const [watchs, setWatchs] = useState<Watch[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("");
   const [brandFilter, setBrandFilter] = useState<string>("");
-  const [priceMinFilter, setPriceMinFilter] = useState<number>(140);
-  const [priceMaxFilter, setPriceMaxFilter] = useState<number>(10000);
-  const [priceDebounce, setPriceDebounce] = useState<number[]>([149, 10000]);
+  const [priceMinFilter, setPriceMinFilter] = useState<number>(0);
+  const [priceMaxFilter, setPriceMaxFilter] = useState<number>(priceMaxLabel);
+  const [priceDebounce, setPriceDebounce] = useState<number[]>([
+    0,
+    priceMaxLabel,
+  ]);
   const [loading, setLoading] = useState<boolean>(true);
   const [fetching, setFetching] = useState<boolean>(false);
   const [pagination, setPagination] = useState<number>(0);
@@ -66,16 +72,16 @@ export default function Store() {
     setPagination(0);
     setBrandFilter("");
   };
-
-  const handleChangePrice = (e: number[]) => {
-    const a = setTimeout(() => {
-      console.log("EXECUTOU");
-    }, 1000);
+  const handleRemovePriceFilter = () => {
+    setFetching(true);
+    setWatchs([]);
+    setPagination(0);
+    setPriceDebounce([0, priceMaxLabel]);
   };
 
   const fetchItems = async () => {
     const res = await fetch(
-      `/api/watch?p=${pagination}&category=${categoryFilter}&brand=${brandFilter}`
+      `/api/watch?p=${pagination}&category=${categoryFilter}&brand=${brandFilter}&priceMin=${priceMinFilter}&priceMax=${priceMaxFilter}`
     );
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -98,7 +104,7 @@ export default function Store() {
       setFetching(false);
     };
     execute();
-  }, [pagination, categoryFilter, brandFilter]);
+  }, [pagination, categoryFilter, brandFilter, priceMinFilter, priceMaxFilter]);
 
   useEffect(() => {
     async function getDataCategories() {
@@ -148,8 +154,14 @@ export default function Store() {
   }, []);
 
   useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
     const timeout = setTimeout(() => {
-      console.log(priceDebounce);
+      setFetching(true);
+      setWatchs([]);
+      setPagination(0);
       setPriceMinFilter(priceDebounce[0]);
       setPriceMaxFilter(priceDebounce[1]);
     }, 1000);
@@ -184,6 +196,20 @@ export default function Store() {
                     qualquer ocasião.
                   </SheetDescription>
                 </SheetHeader>
+                <div>
+                  <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
+                    Preço
+                  </h4>
+                  <div className="flex justify-evenly py-2 font-extralight">
+                    <span>{`R$ ${priceDebounce[0].toFixed(1)}`}</span>
+                    <span>{`R$ ${priceDebounce[1].toFixed(1)}`}</span>
+                  </div>
+                  <Slider
+                    defaultValue={[priceDebounce[0], priceDebounce[1]]}
+                    max={10000}
+                    onValueChange={(e) => setPriceDebounce(e)}
+                  />
+                </div>
                 <div className="my-8 space-y-8">
                   <div>
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
@@ -248,7 +274,7 @@ export default function Store() {
 
           <div className="min-h-screen max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
             <div className="w-full h-full grid grid-cols-4 px1050:grid-cols-1 gap-4">
-              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2">
+              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2 h-fit">
                 <div className="m-8 space-y-8">
                   <div>
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
@@ -260,7 +286,7 @@ export default function Store() {
                     </div>
                     <Slider
                       defaultValue={[priceDebounce[0], priceDebounce[1]]}
-                      max={10000}
+                      max={priceMaxFilter}
                       onValueChange={(e) => setPriceDebounce(e)}
                     />
                   </div>
@@ -318,10 +344,10 @@ export default function Store() {
                 </div>
               </nav>
               <div className="col-span-3">
-                <div className="flex gap-4 pb-5">
+                <div className="flex flex-wrap gap-4">
                   {categoryFilter !== "" ? (
                     <Badge
-                      className="h-10 gap-2"
+                      className="h-10 gap-2 cursor-pointer"
                       variant="secondary"
                       onClick={handleRemoveCategoryFilter}
                     >
@@ -332,9 +358,25 @@ export default function Store() {
                     <></>
                   )}
 
+                  {priceDebounce[0] !== 0 ||
+                  priceDebounce[1] !== priceMaxLabel ? (
+                    <Badge
+                      className="h-10 gap-2 cursor-pointer"
+                      variant="secondary"
+                      onClick={handleRemovePriceFilter}
+                    >
+                      {`R$ ${priceDebounce[0].toFixed(
+                        1
+                      )} - R$ ${priceDebounce[1].toFixed(1)}`}
+                      <X />
+                    </Badge>
+                  ) : (
+                    <></>
+                  )}
+
                   {brandFilter !== "" ? (
                     <Badge
-                      className="h-10 gap-2"
+                      className="h-10 gap-2 cursor-pointer"
                       variant="secondary"
                       onClick={handleRemoveBrandFilter}
                     >
@@ -346,8 +388,8 @@ export default function Store() {
                   )}
                 </div>
                 <div className="flex justify-center flex-wrap gap-4">
-                  {watchs.map((watch) => {
-                    return <WatchCard key={watch.id} {...watch} />;
+                  {watchs.map((watch, index) => {
+                    return <WatchCard key={index} {...watch} />;
                   })}
                 </div>
                 <div className={"flex justify-center"}>
