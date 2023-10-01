@@ -2,7 +2,7 @@ import { UseCase } from "@/contracts/use-case";
 import { WatchRepository } from "@/repositories/watch-repository";
 import { Watch } from "@prisma/client";
 
-type LoadWatchUseCaseRequest = {
+export type LoadWatchUseCaseRequest = {
   p?: number;
   category?: string;
   brand?: string;
