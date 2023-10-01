@@ -1,4 +1,4 @@
-import { IWatchRepository } from "@/repositories/IWatchRepository";
+import { WatchRepository } from "@/repositories/watch-repository";
 import { Watch } from "@prisma/client";
 
 type LoadWatchUseCaseRequest = {
@@ -12,7 +12,7 @@ type LoadWatchUseCaseRequest = {
 type LoadWatchUseCaseResponse = Watch[];
 
 export class LoadWatchsUseCase {
-  constructor(private readonly watchRepository: IWatchRepository) {}
+  constructor(private readonly watchRepository: WatchRepository) {}
 
   async execute(
     body: LoadWatchUseCaseRequest

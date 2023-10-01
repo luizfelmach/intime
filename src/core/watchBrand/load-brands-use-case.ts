@@ -1,10 +1,7 @@
-import { IBrandRepository } from "@/repositories/IBrandRepository";
+import { BrandRepository } from "@/repositories/brand-repository";
 
 export class LoadBrandsUseCase {
-  private brandRepository: IBrandRepository;
-  constructor(brandRepository: IBrandRepository) {
-    this.brandRepository = brandRepository;
-  }
+  constructor(private readonly brandRepository: BrandRepository) {}
 
   async execute(): Promise<string[]> {
     const brands = await this.brandRepository.loadBrand();

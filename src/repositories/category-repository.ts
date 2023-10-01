@@ -1,3 +1,3 @@
-export interface ICategoryRepository {
+export interface CategoryRepository {
   loadCategory(): Promise<string[]>;
 }

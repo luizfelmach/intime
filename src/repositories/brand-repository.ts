@@ -1,3 +1,3 @@
-export interface IBrandRepository {
+export interface BrandRepository {
   loadBrand(): Promise<string[]>;
 }

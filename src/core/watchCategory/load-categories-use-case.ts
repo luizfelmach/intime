@@ -1,10 +1,7 @@
-import { ICategoryRepository } from "@/repositories/ICategoryRepository";
+import { CategoryRepository } from "@/repositories/category-repository";
 
 export class LoadCategoriesUseCase {
-  private categoryRepository: ICategoryRepository;
-  constructor(categoryRepository: ICategoryRepository) {
-    this.categoryRepository = categoryRepository;
-  }
+  constructor(private readonly categoryRepository: CategoryRepository) {}
 
   async execute(): Promise<string[]> {
     const categories = await this.categoryRepository.loadCategory();
