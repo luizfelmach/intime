@@ -1,9 +1,17 @@
+import { UseCase } from "@/contracts/use-case";
 import { CategoryRepository } from "@/repositories/category-repository";
 
-export class LoadCategoriesUseCase {
+type LoadCategoriesUseCaseRequest = void;
+
+type LoadCategoriesUseCaseResponse = string[];
+
+export class LoadCategoriesUseCase
+  implements
+    UseCase<LoadCategoriesUseCaseRequest, LoadCategoriesUseCaseResponse>
+{
   constructor(private readonly categoryRepository: CategoryRepository) {}
 
-  async execute(): Promise<string[]> {
+  async perform(): Promise<LoadCategoriesUseCaseResponse> {
     const categories = await this.categoryRepository.loadAllCategories();
     return categories;
   }

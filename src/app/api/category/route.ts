@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   try {
-    const categories = await loadCategory.execute();
+    const categories = await loadCategory.perform();
     return NextResponse.json(categories);
   } catch (error: any) {
     return NextResponse.json({
