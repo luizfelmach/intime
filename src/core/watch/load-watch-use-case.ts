@@ -1,43 +1,26 @@
+import { UseCase } from "@/contracts/use-case";
 import { WatchRepository } from "@/repositories/watch-repository";
 import { Watch } from "@prisma/client";
 
 type LoadWatchUseCaseRequest = {
-  p: string | null;
-  category: string | null;
-  brand: string | null;
-  priceMin: string | null;
-  priceMax: string | null;
+  p?: number;
+  category?: string;
+  brand?: string;
+  priceMin?: number;
+  priceMax?: number;
 };
 
 type LoadWatchUseCaseResponse = Watch[];
 
-export class LoadWatchsUseCase {
+export class LoadWatchsUseCase
+  implements UseCase<LoadWatchUseCaseRequest, LoadWatchUseCaseResponse>
+{
   constructor(private readonly watchRepository: WatchRepository) {}
 
-  async execute(
+  async perform(
     body: LoadWatchUseCaseRequest
   ): Promise<LoadWatchUseCaseResponse> {
-    const { p, brand, category, priceMax, priceMin } = body;
-    if (p === null) {
-      throw new Error("p is a required field.");
-    }
-    if (isNaN(+p)) {
-      throw new Error("p is nan.");
-    }
-    let pMin;
-    if (priceMin !== null && isNaN(+priceMin)) {
-      throw new Error("priceMin is nan.");
-    }
-    if (priceMax !== null && isNaN(+priceMax)) {
-      throw new Error("priceMax is nan.");
-    }
-    const watchs = await this.watchRepository.loadWatchWithFilter(
-      +p,
-      category,
-      brand,
-      priceMin ? +priceMin : null,
-      priceMax ? +priceMax : null
-    );
+    const watchs = await this.watchRepository.loadWatchWithFilter(body);
     return watchs;
   }
 }

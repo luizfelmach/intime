@@ -10,7 +10,7 @@ export class LoadBrandsUseCase
 {
   constructor(private readonly brandRepository: BrandRepository) {}
 
-  async perform(): Promise<string[]> {
+  async perform(): Promise<LoadBrandsUseCaseResponse> {
     const brands = await this.brandRepository.loadAllBrands();
     return brands;
   }

@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
       priceMin,
       priceMax,
     };
-    const watchs: Watch[] = await loadWatch.execute(params);
+    const watchs: Watch[] = await loadWatch.perform(params);
     return NextResponse.json(watchs);
   } catch (error: any) {
     return NextResponse.json({
