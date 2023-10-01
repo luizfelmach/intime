@@ -9,7 +9,7 @@ interface LoadWatchUseCaseDTO {
   priceMax: string | null;
 }
 
-export class LoadWatchUseCase {
+export class LoadWatchsUseCase {
   private watchRepository: IWatchRepository;
   constructor(watchRepository: IWatchRepository) {
     this.watchRepository = watchRepository;
