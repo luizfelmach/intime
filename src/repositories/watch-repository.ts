@@ -1,12 +1,14 @@
 import { Watch } from "@prisma/client";
 
+export type LoadloadWatchWithFilterRequest = {
+  page?: number;
+  category?: string;
+  brand?: string;
+  priceMin?: number;
+  priceMax?: number;
+};
+
 export interface WatchRepository {
   loadAllWatchs(): Promise<Watch[]>;
-  loadWatchWithFilter(
-    page: number,
-    category: string | null,
-    brand: string | null,
-    priceMin: number | null,
-    priceMax: number | null
-  ): Promise<Watch[]>;
+  loadWatchWithFilter(data: LoadloadWatchWithFilterRequest): Promise<Watch[]>;
 }

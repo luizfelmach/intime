@@ -1,8 +1,8 @@
-import { IBrandRepository } from "@/repositories/IBrandRepository";
+import { BrandRepository } from "@/repositories/brand-repository";
 import { prisma } from "@/services/prisma";
 
-export class PrismaBrandRepository implements IBrandRepository {
-  async loadBrand(): Promise<string[]> {
+export class PrismaBrandRepository implements BrandRepository {
+  async loadAllBrands(): Promise<string[]> {
     const categoriesObj = await prisma.watchBrand.findMany({
       select: {
         label: true,

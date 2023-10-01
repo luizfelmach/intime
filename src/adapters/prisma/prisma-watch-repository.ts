@@ -1,20 +1,21 @@
-import { IWatchRepository } from "@/repositories/IWatchRepository";
+import {
+  LoadloadWatchWithFilterRequest,
+  WatchRepository,
+} from "@/repositories/watch-repository";
+
 import { prisma } from "@/services/prisma";
 import { Watch } from "@prisma/client";
 
-export class PrismaWatchRepository implements IWatchRepository {
-  async loadWatch(): Promise<Watch[]> {
+export class PrismaWatchRepository implements WatchRepository {
+  async loadAllWatchs(): Promise<Watch[]> {
     const watchs = await prisma.watch.findMany();
     return watchs;
   }
 
   async loadWatchWithFilter(
-    page: number,
-    category: string | null,
-    brand: string | null,
-    priceMin: number | null,
-    priceMax: number | null
+    data: LoadloadWatchWithFilterRequest
   ): Promise<Watch[]> {
+    const { brand, category, page, priceMax, priceMin } = data;
     const watchs = await prisma.watch.findMany({
       where: {
         WatchCategory: {
@@ -33,7 +34,7 @@ export class PrismaWatchRepository implements IWatchRepository {
         },
       },
       take: 20,
-      skip: page * 20,
+      skip: page || 0 * 20,
     });
 
     return watchs;

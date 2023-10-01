@@ -1,8 +1,8 @@
-import { ICategoryRepository } from "@/repositories/ICategoryRepository";
+import { CategoryRepository } from "@/repositories/category-repository";
 import { prisma } from "@/services/prisma";
 
-export class PrismaCategoryRepository implements ICategoryRepository {
-  async loadCategory(): Promise<string[]> {
+export class PrismaCategoryRepository implements CategoryRepository {
+  async loadAllCategories(): Promise<string[]> {
     const categoriesObj = await prisma.watchCategory.findMany({
       select: {
         label: true,
