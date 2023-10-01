@@ -1,7 +1,7 @@
 import { Watch } from "@prisma/client";
 
 export interface WatchRepository {
-  loadWatch(): Promise<Watch[]>;
+  loadAllWatchs(): Promise<Watch[]>;
   loadWatchWithFilter(
     page: number,
     category: string | null,

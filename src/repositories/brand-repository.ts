@@ -1,3 +1,3 @@
 export interface BrandRepository {
-  loadBrand(): Promise<string[]>;
+  loadAllBrands(): Promise<string[]>;
 }

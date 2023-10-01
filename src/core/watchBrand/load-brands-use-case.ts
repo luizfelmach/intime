@@ -4,7 +4,7 @@ export class LoadBrandsUseCase {
   constructor(private readonly brandRepository: BrandRepository) {}
 
   async execute(): Promise<string[]> {
-    const brands = await this.brandRepository.loadBrand();
+    const brands = await this.brandRepository.loadAllBrands();
     return brands;
   }
 }

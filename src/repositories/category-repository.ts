@@ -1,3 +1,3 @@
 export interface CategoryRepository {
-  loadCategory(): Promise<string[]>;
+  loadAllCategories(): Promise<string[]>;
 }
