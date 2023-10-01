@@ -1,5 +1,5 @@
 import { PrismaWatchRepository } from "@/implementations/prisma-watch-repository";
-import { LoadWatchUseCase } from "@/useCases/load-watch-use-case";
+import { LoadWatchUseCase } from "@/core/watch/load-watch-use-case";
 
 const watchRepository = new PrismaWatchRepository();
 
