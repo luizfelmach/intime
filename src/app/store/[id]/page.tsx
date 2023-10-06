@@ -1,3 +1,5 @@
+import { WatchDetailsComponent } from "@/components/watch-details";
+import { ApiConfig } from "@/services/api";
 import { notFound } from "next/navigation";
 
 export default async function WatchDetails({
@@ -5,7 +7,7 @@ export default async function WatchDetails({
 }: {
   params: { id: string };
 }) {
-  const res = await fetch(`http://localhost:3000/api/watch/${params.id}`);
+  const res = await fetch(`${ApiConfig.baseUrl}/api/watch/${params.id}`);
   if (!res.ok) {
     throw new Error("failed to fetch content");
   }
@@ -14,5 +16,5 @@ export default async function WatchDetails({
     notFound();
   }
 
-  return <div>OLA</div>;
+  return <WatchDetailsComponent {...data} />;
 }
