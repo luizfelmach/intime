@@ -11,4 +11,5 @@ export type LoadloadWatchWithFilterRequest = {
 export interface WatchRepository {
   loadAllWatchs(): Promise<Watch[]>;
   loadWatchWithFilter(data: LoadloadWatchWithFilterRequest): Promise<Watch[]>;
+  loadWatchById(id: string): Promise<Watch | null>;
 }

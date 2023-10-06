@@ -4,6 +4,8 @@
 ### watchs
 GET {{apiurl}}/watch?p=1&category=Relógios Masculinos&brand=&priceMin=50&priceMax=522.98 HTTP/1.1
 
+###
+GET {{apiurl}}/watch/1b8b6ec8-cea0-4a44-9d7c-d09f4ae1465a
 
 ### categories
 GET {{apiurl}}/category HTTP/1.1
