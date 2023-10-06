@@ -24,6 +24,7 @@ import { Watch } from "@prisma/client";
 import { BadgeX, Filter, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import * as SliderRadix from "@radix-ui/react-slider";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const priceMaxLabel = 10000;
 
@@ -200,7 +201,7 @@ export default function Store() {
                   <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
                     Preço
                   </h4>
-                  <div className="flex justify-evenly py-2 font-extralight">
+                  <div className="flex justify-evenly py-2 text-muted-foreground">
                     <span>{`R$ ${priceDebounce[0].toFixed(1)}`}</span>
                     <span>{`R$ ${priceDebounce[1].toFixed(1)}`}</span>
                   </div>
@@ -223,7 +224,7 @@ export default function Store() {
                         return (
                           <div
                             key={index}
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-2 text-muted-foreground"
                           >
                             <RadioGroupItem
                               className="w-6 h-6"
@@ -249,7 +250,7 @@ export default function Store() {
                         return (
                           <div
                             key={index}
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-2 text-muted-foreground"
                           >
                             <RadioGroupItem
                               className="w-6 h-6"
@@ -274,13 +275,13 @@ export default function Store() {
 
           <div className="min-h-screen max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
             <div className="w-full h-full grid grid-cols-4 px1050:grid-cols-1 gap-4">
-              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2 h-fit">
+              <nav className="px1050:hidden phone:hidden bg-foreground/5 rounded-xl row-span-2 h-fit ">
                 <div className="m-8 space-y-8">
                   <div>
                     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">
                       Preço
                     </h4>
-                    <div className="flex justify-evenly py-2 font-extralight">
+                    <div className="flex justify-evenly py-2 text-muted-foreground">
                       <span>{`R$ ${priceDebounce[0].toFixed(1)}`}</span>
                       <span>{`R$ ${priceDebounce[1].toFixed(1)}`}</span>
                     </div>
@@ -302,7 +303,7 @@ export default function Store() {
                         return (
                           <div
                             key={index}
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-2 text-muted-foreground"
                           >
                             <RadioGroupItem
                               className="w-6 h-6"
@@ -328,7 +329,7 @@ export default function Store() {
                         return (
                           <div
                             key={index}
-                            className="flex items-center space-x-2"
+                            className="flex items-center space-x-2 text-muted-foreground"
                           >
                             <RadioGroupItem
                               className="w-6 h-6"
@@ -344,7 +345,7 @@ export default function Store() {
                 </div>
               </nav>
               <div className="col-span-3">
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 mb-4">
                   {categoryFilter !== "" ? (
                     <Badge
                       className="h-10 gap-2 cursor-pointer"

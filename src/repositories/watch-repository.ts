@@ -1,7 +1,7 @@
 import { Watch } from "@prisma/client";
 
 export type LoadloadWatchWithFilterRequest = {
-  page?: number;
+  p?: number;
   category?: string;
   brand?: string;
   priceMin?: number;

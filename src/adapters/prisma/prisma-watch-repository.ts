@@ -15,7 +15,7 @@ export class PrismaWatchRepository implements WatchRepository {
   async loadWatchWithFilter(
     data: LoadloadWatchWithFilterRequest
   ): Promise<Watch[]> {
-    const { brand, category, page, priceMax, priceMin } = data;
+    const { brand, category, p, priceMax, priceMin } = data;
     const watchs = await prisma.watch.findMany({
       where: {
         WatchCategory: {
@@ -34,7 +34,7 @@ export class PrismaWatchRepository implements WatchRepository {
         },
       },
       take: 20,
-      skip: page || 0 * 20,
+      skip: p ? p * 20 : 0,
     });
 
     return watchs;
