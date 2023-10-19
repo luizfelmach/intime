@@ -2,11 +2,20 @@ import { Watch } from "@prisma/client";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ShoppingBag } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export function WatchCard(watchProps: Watch) {
-  const { name, description, images, videos, price } = watchProps;
+  const router = useRouter();
+  const { id, name, description, images, videos, price } = watchProps;
+
+  const handleClick = () => {
+    router.push(`/store/${id}`);
+  };
   return (
-    <div className="flex-grow basis-60 max-w-[260px] tablet:max-w-[400px] bg-foreground/10 rounded-lg overflow-hidden hover:bg-foreground/5 transition-colors cursor-pointer pb-8">
+    <div
+      onClick={() => handleClick()}
+      className="flex-grow basis-60 max-w-[260px] tablet:max-w-[400px] bg-foreground/10 rounded-lg overflow-hidden hover:bg-foreground/5 transition-colors cursor-pointer pb-8"
+    >
       <div className="flex justify-center pt-1">
         <div className="bg-foreground/10 rounded-xl w-[97%] h-72 flex justify-center">
           <Image

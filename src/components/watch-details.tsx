@@ -15,6 +15,9 @@ import Inline from "yet-another-react-lightbox/plugins/inline";
 
 import "yet-another-react-lightbox/styles.css";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { MoveLeft } from "lucide-react";
 
 type WatchDetailsProps = Watch;
 
@@ -25,6 +28,8 @@ export function WatchDetailsComponent({
   videos,
   price,
 }: WatchDetailsProps) {
+  const router = useRouter();
+
   const [open, setOpen] = useState(false);
 
   const videosMedia = videos.map((video) => {
@@ -45,10 +50,10 @@ export function WatchDetailsComponent({
   const media: any = [...imagesMedia, ...videosMedia];
 
   return (
-    <div>
+    <div className="bg-foreground/5">
       <Navbar />
       <div className="rounded-full">
-        <div className="min-h-screen max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
+        <div className="min-h-screen bg-foreground/ max-w-[1300px] w-[100%] relative mx-auto px-4 py-4 flex justify-end flex-wrap gap-4">
           <div className="w-full h-full gap-4">
             <div className="flex w-full min-h-screen place-items-center">
               <div className="flex tablet:block">
@@ -64,7 +69,7 @@ export function WatchDetailsComponent({
                     height={1000}
                   />
                 </div>
-                <div className="ml-12 tablet:ml-0 tablet:pt-7">
+                <div className="ml-12 tablet:ml-0 tablet:pt-7 basis-1/2">
                   <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
                     {name}
                   </h1>
@@ -75,7 +80,7 @@ export function WatchDetailsComponent({
                     {price}
                   </p>
 
-                  <div>
+                  <div className="w-">
                     <Button className="w-full">Comprar</Button>
                   </div>
                 </div>

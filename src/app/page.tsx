@@ -56,7 +56,7 @@ export default function Home() {
           <Loader />
         </>
       ) : (
-        <div className="main">
+        <div className="">
           <Navbar />
 
           <ReactWhatsappButton

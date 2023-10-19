@@ -179,9 +179,9 @@ export default function Store() {
           <Loader />
         </>
       ) : (
-        <>
+        <div className="bg-foreground/5 ">
           <Navbar />
-          <div className="invisible px1050:visible self-stretch max-w-[1300px] w-[100%] relative mx-auto pt-20 px-4">
+          <div className="invisible px1050:visible  self-stretch max-w-[1300px] w-[100%] relative mx-auto pt-20 px-4">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" className="gap-2">
@@ -348,7 +348,7 @@ export default function Store() {
                 <div className="flex flex-wrap gap-4 mb-4">
                   {categoryFilter !== "" ? (
                     <Badge
-                      className="h-10 gap-2 cursor-pointer"
+                      className="h-10 bg-foreground/10 gap-2 cursor-pointer"
                       variant="secondary"
                       onClick={handleRemoveCategoryFilter}
                     >
@@ -362,7 +362,7 @@ export default function Store() {
                   {priceDebounce[0] !== 0 ||
                   priceDebounce[1] !== priceMaxLabel ? (
                     <Badge
-                      className="h-10 gap-2 cursor-pointer"
+                      className="h-10 bg-foreground/10 gap-2 cursor-pointer"
                       variant="secondary"
                       onClick={handleRemovePriceFilter}
                     >
@@ -377,7 +377,7 @@ export default function Store() {
 
                   {brandFilter !== "" ? (
                     <Badge
-                      className="h-10 gap-2 cursor-pointer"
+                      className="h-10 bg-foreground/10 gap-2 cursor-pointer"
                       variant="secondary"
                       onClick={handleRemoveBrandFilter}
                     >
@@ -402,7 +402,7 @@ export default function Store() {
             </div>
           </div>
           <Footer />
-        </>
+        </div>
       )}
     </div>
   );
